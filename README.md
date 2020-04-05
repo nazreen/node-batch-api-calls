@@ -3,10 +3,10 @@
 1. create a `.env` with the following variables:
 
 ```
-    API_URL: process.env.API_URL,
-    INPUT_FILE: process.env.INPUT_FILE,
-    OUTPUT_FILE: process.env.OUTPUT_FILE,
-    DEFAULT_CONTRIBUTOR: process.env.DEFAULT_CONTRIBUTOR
+    API_URL=
+    INPUT_FILE=
+    OUTPUT_FILE=
+    DEFAULT_CONTRIBUTOR=
 ```
 
 2. to add custom document parsing, modify the `src/customParseDoc.js` file with the required transformations
