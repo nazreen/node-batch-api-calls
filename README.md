@@ -1,3 +1,5 @@
+currently the operation is set as `post()` only
+
 # Setup
 
 1. create a `.env` with the following variables:
