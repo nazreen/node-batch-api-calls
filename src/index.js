@@ -6,6 +6,7 @@ const prettyjson = require('prettyjson')
 const config = require('./config')
 const makeRequest = require('./makeRequest')
 const customParseDoc = require('./customParseDoc')
+const { appendJsonFileName } = require('./helpers')
 
 const { API_URL, INPUT_FILE, OUTPUT_FILE, DEFAULT_CONTRIBUTOR } = config
 
@@ -23,9 +24,11 @@ function inc(name) {
   stats[name]++
   console.log(stats)
 
+  // TODO: create a done() function and move below to that
   if (stats.counter === array.length) {
     console.log('We are done.')
     writeFile(remainder)
+    if (stats.success > 0) renameInputFile()
   }
 }
 
@@ -64,3 +67,9 @@ array.forEach((preDocument) => {
       inc('error')
     })
 })
+
+function renameInputFile() {
+  const d = new Date()
+  const appendText = '-' + d.toISOString().slice(0, 10)
+  fs.renameSync(INPUT_FILE, appendJsonFileName(INPUT_FILE, appendText))
+}
