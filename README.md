@@ -1,5 +1,9 @@
 currently the operation is set as `post()` only
 
+# Todo
+
+- make OUTPUT_FILE have a static name of `remainder.json` to make the purpose more clear.
+
 # Setup
 
 1. create a `.env` with the following variables:
@@ -15,8 +19,11 @@ currently the operation is set as `post()` only
 
 # Running the operation
 
-1. Import input JSON to `data/raw.json`.
+1. Import input JSON to `data/INPUT_FILE`.
 2. Run the script using `node src/index.js`
-3. If there are any errors, the remainder documents are in `data/result.json`.
-4. After identifying errors, prepare to run the script again. This time, take the previous `result.json` and rename it into `raw.json`. For backup, rename the previous `raw.json` into `raw.0.json` in case you need to restart the whole process again.
-5. Repeat step 4 until all documents are processed.
+
+# The resulting output
+
+- If there are any errors, the remainder documents are in `data/OUTPUT_FILE`.
+- To prevent accidental double writes, the INPUT_FILE will be auto-appended if there is 1 or more successful operations
+- After identifying errors, prepare to run the script again. This time, take the previous `OUTPUT_FILE` and rename it into `INPUT_FILE`.
