@@ -1,5 +1,4 @@
 const axios = require('axios')
-const prettyjson = require('prettyjson')
 
 const makeRequest = (API_URL) => (document) => {
   return axios.post(API_URL, document)

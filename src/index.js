@@ -1,6 +1,8 @@
 'use strict'
 
 const fs = require('fs')
+const prettyjson = require('prettyjson')
+
 const config = require('./config')
 const makeRequest = require('./makeRequest')
 const customParseDoc = require('./customParseDoc')
@@ -45,8 +47,7 @@ function writeFile(array) {
 
 console.log(`Start with ${array.length} documents.`)
 
-for (let i = 0; i < array.length; i++) {
-  const preDocument = array[i]
+array.forEach((preDocument) => {
   const document = parseDoc(preDocument)
   makeRequest(API_URL)(document)
     .then((response) => {
@@ -62,6 +63,4 @@ for (let i = 0; i < array.length; i++) {
       inc('counter')
       inc('error')
     })
-}
-
-const { counter, success, error } = stats
+})
