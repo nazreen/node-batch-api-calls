@@ -6,8 +6,8 @@ currently the operation is set as `post()` only
 
 ```
     API_URL=
-    INPUT_FILE=
-    OUTPUT_FILE=
+    INPUT_FILE=data/raw.json
+    OUTPUT_FILE=data/result.json
     DEFAULT_CONTRIBUTOR=
 ```
 
