@@ -1,9 +1,8 @@
 'use strict'
 
-const axios = require('axios')
 const fs = require('fs')
 const config = require('./config')
-const prettyjson = require('prettyjson')
+const makeRequest = require('./makeRequest')
 const customParseDoc = require('./customParseDoc')
 
 const { API_URL, INPUT_FILE, OUTPUT_FILE, DEFAULT_CONTRIBUTOR } = config
@@ -49,15 +48,15 @@ console.log(`Start with ${array.length} documents.`)
 for (let i = 0; i < array.length; i++) {
   const preDocument = array[i]
   const document = parseDoc(preDocument)
-  axios
-    .post(API_URL, document)
+  makeRequest(API_URL)(document)
     .then((response) => {
       console.log(`Successfully posted for ${document.title}`)
       inc('counter')
       inc('success')
     })
     .catch((e) => {
-      console.error(e.response.data)
+      console.error(e)
+      // console.error(e.response.data)
       console.log(prettyjson.render(document))
       remainder.push(document)
       inc('counter')
