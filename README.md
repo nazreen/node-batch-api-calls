@@ -1,6 +1,7 @@
 Currently this repo can perform these operations:
 
 - `iterateAndRequest` for every document, call an API endpoint. Note that currently the operation is set as `post()` only
+- `batchWrite` for every document, transform and add to transaction. Commit to database as one batch transaction. (currently a WIP)
 
 # Todo
 
