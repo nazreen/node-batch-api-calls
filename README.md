@@ -1,4 +1,4 @@
-currently the operation is set as `post()` only
+What this repo does: for every document, call an API endpoint. Note that currently the operation is set as `post()` only
 
 # Todo
 
