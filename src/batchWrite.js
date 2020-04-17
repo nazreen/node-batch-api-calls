@@ -1,9 +1,10 @@
 const config = require('./_config')
-const { readFile } = require('./_helpers')
+const { askForConfirmation, readFile } = require('./_helpers')
 
 const { INPUT_FILE, OUTPUT_FILE } = config
 
 async function batchWrite() {
+  askForConfirmation('This will execute batchWrite')
   const documents = await readFile(INPUT_FILE)
   documents.forEach(processDocument)
   commit()
