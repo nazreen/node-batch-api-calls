@@ -12,6 +12,7 @@
     "axios": "^0.18.0",
     "dotenv": "^5.0.1",
     "jasmine": "^3.5.0",
+    "neat-csv": "^5.2.0",
     "nodemon": "^2.0.2",
     "prettyjson": "^1.2.1"
   }
