@@ -3,10 +3,10 @@
 const fs = require('fs')
 const prettyjson = require('prettyjson')
 
-const config = require('./config')
-const makeRequest = require('./makeRequest')
-const customParseDoc = require('./customParseDoc')
-const { appendJsonFileName } = require('./helpers')
+const config = require('./_config')
+const makeRequest = require('./_makeRequest')
+const customParseDoc = require('./_customParseDoc')
+const { appendJsonFileName } = require('./_helpers')
 
 const { API_URL, INPUT_FILE, OUTPUT_FILE, DEFAULT_CONTRIBUTOR } = config
 

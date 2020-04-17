@@ -1,4 +1,6 @@
-What this repo does: for every document, call an API endpoint. Note that currently the operation is set as `post()` only
+Currently this repo can perform these operations:
+
+- `iterateAndRequest` for every document, call an API endpoint. Note that currently the operation is set as `post()` only
 
 # Todo
 
@@ -22,7 +24,8 @@ What this repo does: for every document, call an API endpoint. Note that current
 # Running the operation
 
 1. Import input JSON to `data/INPUT_FILE`.
-2. Run the script using `node src/index.js`
+2. Run the script using `node src/OPERATION_NAME.js`
+
 
 # The resulting output
 
