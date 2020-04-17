@@ -17,6 +17,8 @@ currently the operation is set as `post()` only
 
 2. to add custom document parsing, modify the `src/customParseDoc.js` file with the required transformations
 
+3. run `npm i`
+
 # Running the operation
 
 1. Import input JSON to `data/INPUT_FILE`.
